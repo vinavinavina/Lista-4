@@ -17,9 +17,11 @@ Este projeto tem como objetivo integrar análise de dados contábeis de empresas
 - Descrição projeto (`write`): Este projeto tem como objetivo integrar análise de dados contábeis de empresas com indicadores econômicos, utilizando Python, Pandas, Ipeadata e Streamlit.
 """
 
+st.set_page_config(
 page_title = "Lista de Exercícios 4"
-header = "Projeto Final – Análise Contábil com Ajuste Econômico"
-write = "Este projeto tem como objetivo integrar análise de dados contábeis de empresas com indicadores econômicos, utilizando Python, Pandas, Ipeadata e Streamlit."
+)
+st.header("Projeto Final – Análise Contábil com Ajuste Econômico")
+st.write("Este projeto tem como objetivo integrar análise de dados contábeis de empresas com indicadores econômicos, utilizando Python, Pandas, Ipeadata e Streamlit.")
 
 """2) Importe os dados do arquivo empresas_dados.csv utilizando pandas e apresente todas as linhas da df (peso: 1,0)
 
@@ -32,7 +34,7 @@ import streamlit as st
 df = pd.read_csv("empresas_dados.csv", sep=";")
 
 
-df.head(len(df))
+st.write(df)
 
 """3) Calcule os indicadores Margem Líquida e ROA e salve como novas coluna da df. Depois apresente os dois indicadores no mesmo gráfico de linhas, agrupado por Ano  (peso: 1,0)
 
@@ -58,7 +60,7 @@ plt.legend()
 plt.xlabel("Ano")
 plt.ylabel("Valor")
 plt.title("Margem Líquida e ROA ao longo dos anos")
-plt.show()
+st.pyplot(plt)
 
 """4) Utilize o pacote ipeadatapy e faça busca para encontrar o indicador que traga o IPCA, taxa de variação, em % e anual: (peso: 2,0)
 
@@ -104,7 +106,7 @@ plt.ylabel("Valor (médio)")
 plt.title("Receita Líquida e Receita Real ao longo dos anos")
 plt.legend()
 plt.tight_layout()
-plt.show()
+st.pyplot(plt)
 
 """7) Faça os ajustes necessários e leve este projeto para a web usando GitHub e Streamlit (peso: 2,0)
 
