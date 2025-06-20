@@ -27,7 +27,7 @@ Dica: Utilize `head(len(df))`
 """
 
 import pandas as pd
-
+import streamlit as st
 
 df = pd.read_csv("empresas_dados.csv", sep=";")
 
