@@ -100,15 +100,15 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import streamlit as st
 
-df_plot = df_2.groupby('Ano')[['Receita Líquida', 'Receita Real']].sum().reset_index()
+df_receita_liquida = df_combinada.groupby("Ano")["Receita Líquida"].mean()
+df_receita_real = df_combinada.groupby("Ano")["Receita Real"].mean()
 
-plt.plot(df_receita_liquida, label="Receita Líquida", marker="o")
-plt.plot(df_receita_real, label="Receita Real", marker="s")
+plt.plot(df_receita_liquida, label="Receita Líquida")
+plt.plot(df_receita_real, label="Receita Real")
 plt.xlabel("Ano")
 plt.ylabel("Valor (médio)")
 plt.title("Receita Líquida e Receita Real ao longo dos anos")
 plt.legend()
-plt.xticks(df_plot['Ano'], rotation=45)
 plt.tight_layout()
 st.pyplot(plt)
 
