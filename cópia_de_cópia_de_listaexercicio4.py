@@ -108,7 +108,7 @@ plt.ylabel("Valor (médio)")
 plt.title("Receita Líquida e Receita Real ao longo dos anos")
 plt.legend()
 plt.tight_layout()
-st.pyplot(fig)
+st.pyplot(plt)
 
 """7) Faça os ajustes necessários e leve este projeto para a web usando GitHub e Streamlit (peso: 2,0)
 
