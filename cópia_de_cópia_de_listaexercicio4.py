@@ -103,14 +103,16 @@ import streamlit as st
 df_receita_liquida = df_combinada.groupby("Ano")["Receita Líquida"].mean()
 df_receita_real = df_combinada.groupby("Ano")["Receita Real"].mean()
 
-plt.plot(df_receita_liquida, label="Receita Líquida")
-plt.plot(df_receita_real, label="Receita Real")
-plt.xlabel("Ano")
-plt.ylabel("Valor (médio)")
-plt.title("Receita Líquida e Receita Real ao longo dos anos")
-plt.legend()
+fig, ax = plt.subplots()
+ax.plot(df_receita_liquida, label="Receita Líquida", color='blue')
+ax.plot(df_receita_real, label="Receita Real", color='orange')
+ax.set_xlabel("Ano")
+ax.set_ylabel("Valor (médio)")
+ax.set_title("Receita Líquida e Receita Real ao longo dos anos")
+ax.legend()
 plt.tight_layout()
-st.pyplot(plt)
+
+st.pyplot(fig)
 
 """7) Faça os ajustes necessários e leve este projeto para a web usando GitHub e Streamlit (peso: 2,0)
 
